@@ -32,10 +32,10 @@ $(document).ready(function() {
   
       // Display current weather conditions
       var currentWeather = data.list[0];
+      var currentDate1 = dayjs().format('MMMM D, YYYY'); // Get the current date
       var html = `
-        <div class="current-weather">
-          <h2>Current Weather</h2>
-          <h3 id="currentCityName"></h3>
+        <div class="current-weather bordered">
+        <h3 id="currentCityName">${data.city.name}</h3>
           <div id="currentWeatherInfo"></div>
           <div class="weather-info">
             <div class="weather-icon animated fadeIn">
@@ -45,6 +45,7 @@ $(document).ready(function() {
               <p><strong>Temperature:</strong> ${Math.round(currentWeather.main.temp)}°C</p>
               <p><strong>Humidity:</strong> ${currentWeather.main.humidity}%</p>
               <p><strong>Wind Speed:</strong> ${currentWeather.wind.speed} m/s</p>
+              <p><strong>Current Date:</strong> ${currentDate1}</p> <!-- Display the current date -->
             </div>
           </div>
         </div>
@@ -68,7 +69,7 @@ $(document).ready(function() {
       `;
   
       forecast.forEach(function(item, index) {
-        var date = dayjs(item.dt_txt).format('MMMM D');
+        var date = dayjs(item.dt_txt).format('MMMM D, YYYY');
         var colorClass = index % 2 === 0 ? "even-day" : "odd-day"; // Apply different color classes based on index
       
         html += `
@@ -119,9 +120,11 @@ $(document).ready(function() {
         "13n": "wi-night-snow",
         "50n": "wi-night-alt-cloudy-windy"
       };
-  
-      return iconsMap[icon] || "";
+    
+      var iconClass = iconsMap[icon] || "";
+      return `animated fadeIn ${iconClass}`; // Add animation classes to the icon
     }
+    
   
     // Function to save search history in localStorage
     function saveSearchHistory(cityName) {

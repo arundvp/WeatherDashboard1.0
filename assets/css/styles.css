@@ -1,6 +1,6 @@
 .title {
     text-align: center;
-    background-color: blue;
+    background-color: #0e2840;
     color: aliceblue;
     background-size: 0cqi;
     font-weight: bold;
@@ -10,6 +10,9 @@
 .form {
     margin-top: 20px;
     text-align: center;
+    font-weight: 900;
+    font-style: inherit;
+    font-size: large;
 }
 
 .weather-results {
@@ -20,6 +23,12 @@
     margin-bottom: 20px;
 }
 
+.bordered {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
 .weather-info {
     display: flex;
     justify-content: center;
@@ -85,15 +94,18 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     text-align: center;
-  }
+    }
 
   .search-history-item {
     padding: 10px;
-    background-color: #2daee1;
+    background-color: #444748;
     cursor: pointer;
+    font-weight: bold;
+    color: #c7dde3;
+    border-radius: 10px;
   }
   
   .search-history-item:hover {
-    background-color: #edc4c4;
+    background-color: #5766c3;
   }
   
