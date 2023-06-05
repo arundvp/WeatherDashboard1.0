@@ -1,10 +1,5 @@
 .title {
     text-align: center;
-    background-color: blue;
-    color: aliceblue;
-    background-size: 0cqi;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .form {
@@ -41,8 +36,7 @@
 
 .forecast-item {
     margin-bottom: 20px;
-    padding: 1%;
-    }
+}
 
 .date {
     font-weight: bold;
@@ -68,32 +62,3 @@
     cursor: pointer;
     margin-bottom: 5px;
 }
-
-
-#forecastSection {
-    margin-top: 20px;
-  }
-  
-  #forecastContainer {
-    margin-top: 10px;
-  }
-  
-  .forecastItem {
-    flex: 1 1 20%;
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
-  }
-
-  .search-history-item {
-    padding: 10px;
-    background-color: #2daee1;
-    cursor: pointer;
-  }
-  
-  .search-history-item:hover {
-    background-color: #edc4c4;
-  }
-  

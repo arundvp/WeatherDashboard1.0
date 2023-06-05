@@ -67,12 +67,10 @@ $(document).ready(function() {
           <div class="forecast-info row">
       `;
   
-      forecast.forEach(function(item, index) {
+      forecast.forEach(function(item) {
         var date = dayjs(item.dt_txt).format('MMMM D');
-        var colorClass = index % 2 === 0 ? "even-day" : "odd-day"; // Apply different color classes based on index
-      
         html += `
-          <div class="forecast-item ${colorClass}" style="background-color: ${getColorByIndex(index)};">
+          <div class="forecast-item">
             <p class="date">${date}</p>
             <div class="weather-icon animated fadeIn">
               <i class="wi ${getWeatherIconClass(item.weather[0].icon)}"></i>
@@ -83,11 +81,6 @@ $(document).ready(function() {
           </div>
         `;
       });
-      
-      function getColorByIndex(index) {
-        var colors = ["#2DE2EA", "#DAEC19"]; // Define your desired background colors
-        return colors[index % colors.length];
-      }
   
       html += `
           </div>
@@ -136,7 +129,7 @@ $(document).ready(function() {
       searchHistory.unshift(cityName);
   
       // Keep only the last 5 search entries
-      //searchHistory = searchHistory.slice(0, 5);
+      searchHistory = searchHistory.slice(0, 5);
   
       // Save search history back to localStorage
       localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
@@ -158,7 +151,7 @@ $(document).ready(function() {
       searchHistoryList.empty();
   
       searchHistory.forEach(function(cityName) {
-        var listItem = $("<li>").text(cityName).addClass("search-history-item");
+        var listItem = $("<li>").text(cityName);
         listItem.on("click", function() {
           getWeather(cityName);
         });
