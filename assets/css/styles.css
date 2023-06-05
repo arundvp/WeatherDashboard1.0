@@ -50,13 +50,17 @@
 
 .forecast-item {
     margin-bottom: 20px;
-    padding: 1%;
+    padding: 2%;
+    border-radius: 5px;
     }
 
 .date {
     font-weight: bold;
 }
 
+.current-date {
+    font-weight: bold;
+}
 .search-history-container {
     position: fixed;
     top: 10px;
@@ -92,7 +96,7 @@
     margin-bottom: 20px;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     text-align: center;
     }
 
@@ -102,7 +106,7 @@
     cursor: pointer;
     font-weight: bold;
     color: #c7dde3;
-    border-radius: 10px;
+    border-radius: 5px;
   }
   
   .search-history-item:hover {

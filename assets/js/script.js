@@ -32,21 +32,22 @@ $(document).ready(function() {
   
       // Display current weather conditions
       var currentWeather = data.list[0];
-      var currentDate1 = dayjs().format('MMMM D, YYYY'); // Get the current date
+      var currentDate = dayjs().format('MMMM D, YYYY'); // Get the current date
       var html = `
         <div class="current-weather bordered">
         <h3 id="currentCityName">${data.city.name}</h3>
-          <div id="currentWeatherInfo"></div>
+          <div id="currentWeatherInfo">
+          <p><strong></strong> <span class="current-date">${currentDate}</span></p>
+          </div>
           <div class="weather-info">
             <div class="weather-icon animated fadeIn">
               <i class="wi ${getWeatherIconClass(currentWeather.weather[0].icon)}"></i>
             </div>
             <div class="weather-details">
-              <p><strong>Temperature:</strong> ${Math.round(currentWeather.main.temp)}°C</p>
+            <p><strong>Temperature:</strong> ${Math.round(currentWeather.main.temp)}°C</p>
               <p><strong>Humidity:</strong> ${currentWeather.main.humidity}%</p>
               <p><strong>Wind Speed:</strong> ${currentWeather.wind.speed} m/s</p>
-              <p><strong>Current Date:</strong> ${currentDate1}</p> <!-- Display the current date -->
-            </div>
+              </div>
           </div>
         </div>
       `;
