@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather App</h1>
+        <form id="weatherForm">
+            <label for="cityInput">Enter City Name:</label>
+            <input type="text" id="cityInput" class="form-control" required>
+            <button type="submit" class="btn btn-primary">Get Weather</button>
+        </form>
+        <div id="weatherResults" class="mt-4"></div>
+        <div id="searchHistory"> </div>
+    </div>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
