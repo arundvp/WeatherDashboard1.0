@@ -19,11 +19,20 @@
     align-items: center;
 }
 
-.weather-icon img {
-    width: 50px;
-    height: 50px;
+.weather-icon {
+    font-size: 80px;
+    margin-right: 20px;
+    animation-duration: 1s;
+    animation-fill-mode: both;
 }
 
+/* .weather-icon {
+    font-size: 80px;
+    margin-right: 20px;
+    color: #333;
+  } */
+
+  
 .weather-details {
     margin-left: 20px;
 }
@@ -57,4 +66,22 @@
 
 .search-history-list li:hover {
     background-color: #f2f2f2;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.animate__fadeIn {
+    animation-name: fadeIn;
 }

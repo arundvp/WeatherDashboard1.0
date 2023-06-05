@@ -25,7 +25,6 @@ $(document).ready(function () {
     // Function to get weather data for a city
     function getWeatherData(cityName) {
         var apiKey = "12fea0d5512d60952bad341f162058ec"; // Replace with your OpenWeatherMap API key
-        var apiKey = "12fea0d5512d60952bad341f162058ec"; // Replace with your OpenWeatherMap API key
         var apiUrl = "https://api.openweathermap.org/data/2.5/weather";
         var queryParams = {
             q: cityName,
@@ -58,12 +57,7 @@ $(document).ready(function () {
 
         var html = "<h3>" + city + "</h3>";
         html += '<div class="weather-info">';
-        html +=
-            '<div class="weather-icon"><img src="https://openweathermap.org/img/wn/' +
-            weather.icon +
-            '.png" alt="' +
-            weather.description +
-            '"></div>';
+        html += '<div class="weather-icon"><i class="wi ' + getWeatherIconClass(weather.icon) + '"></i></div>';
         html += '<div class="weather-details">';
         html += "<p><strong>Date:</strong> " + dayjs().format("YYYY-MM-DD HH:mm:ss") + "</p>";
         html += "<p><strong>Temperature:</strong> " + temperature + "°C</p>";
@@ -73,6 +67,42 @@ $(document).ready(function () {
         html += "</div>";
 
         resultsContainer.html(html);
+        animateWeatherIcon();
+    }
+
+    // Function to get the CSS class for the animated weather icon
+    function getWeatherIconClass(icon) {
+        // Map OpenWeatherMap icons to Weather Icons classes
+        var iconsMap = {
+          "01d": "wi-day-sunny",
+          "02d": "wi-day-cloudy",
+          "03d": "wi-cloudy",
+          "04d": "wi-cloudy-gusts",
+          "09d": "wi-showers",
+          "10d": "wi-rain",
+          "11d": "wi-thunderstorm",
+          "13d": "wi-snow",
+          "50d": "wi-fog",
+          "01n": "wi-night-clear",
+          "02n": "wi-night-cloudy",
+          "03n": "wi-night-cloudy",
+          "04n": "wi-night-cloudy-gusts",
+          "09n": "wi-night-showers",
+          "10n": "wi-night-rain",
+          "11n": "wi-night-thunderstorm",
+          "13n": "wi-night-snow",
+          "50n": "wi-night-alt-cloudy-windy"
+        };
+      
+        return iconsMap[icon] || "";
+      }
+    
+
+    // Function to animate the weather icon
+    function animateWeatherIcon() {
+        var weatherIcon = $(".weather-icon");
+        weatherIcon.addClass("fadeIn");
+        weatherIcon.addClass("animate__animated animate__fadeIn");
     }
 
     // Function to save search history in local storage

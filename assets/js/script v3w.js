@@ -25,7 +25,6 @@ $(document).ready(function () {
     // Function to get weather data for a city
     function getWeatherData(cityName) {
         var apiKey = "12fea0d5512d60952bad341f162058ec"; // Replace with your OpenWeatherMap API key
-        var apiKey = "12fea0d5512d60952bad341f162058ec"; // Replace with your OpenWeatherMap API key
         var apiUrl = "https://api.openweathermap.org/data/2.5/weather";
         var queryParams = {
             q: cityName,
