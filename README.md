@@ -43,6 +43,7 @@ Hosted the index.html in GitHub Pages
 ## Links
 
 URL to my deployed webpage: https://arundvp.github.io/WeatherDashboard1.0/
+
 URL to the GitHub repository: https://github.com/arundvp/WeatherDashboard1.0
 
 ![Screenshot for the webpage](./assets/images/my-weather-app1.0.png)
